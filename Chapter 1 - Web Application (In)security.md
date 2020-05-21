@@ -154,7 +154,7 @@ within their user context and privilege level. The vulnerability allows a
 malicious web site visited by the victim user to interact with the application
 to perform actions that the user did not intend.
 
-###### SSL is an excellent technology that protects the confi dentiality and integrity
+##### SSL is an excellent technology that protects the confidentiality and integrity
 of data in transit between the user’s browser and the web server. It helps defend
 against eavesdroppers, and it can provide assurance to the user of the identity of
 the web server he is dealing with. But it does not stop attacks that directly target
@@ -162,6 +162,114 @@ the server or client components of an application, as most successful attacks do
 Specifi cally, it does not prevent any of the vulnerabilities just listed, or many
 others that can render an application critically exposed to attack. Regardless of
 whether they use SSL, most web applications still contain security fl aws.
+
+#### The Core Security Problem: Users Can Submit
+Arbitrary Input
+
+Users are not restricted to using only a web browser to access the application.
+Numerous widely available tools operate alongside, or independently of,
+a browser to help attack web applications. These tools can make requests
+that no browser would ordinarily make and can generate huge numbers
+of requests quickly to fi nd and exploit problems.
+
+
+The majority of attacks against web applications involve sending input to the
+server that is crafted to cause some event that was not expected or desired by
+the application’s designer. Here are some examples of submitting crafted input
+to achieve this objective:
+
++ Changing the price of a product transmitted in a hidden HTML form fi eld
+to fraudulently purchase the product for a cheaper amount
++ Modifying a session token transmitted in an HTTP cookie to hijack the
+session of another authenticated user
++ Removing certain parameters that normally are submitted to exploit a
+logic fl aw in the application’s processing
++ Altering some input that will be processed by a back-end database to inject
+a malicious database query and access sensitive data
+
+Needless to say, SSL does nothing to stop an attacker from submitting crafted
+input to the server. If the application uses SSL, this simply means that other users
+on the network cannot view or modify the attacker’s data in transit. Because
+the attacker controls her end of the SSL tunnel, she can send anything she likes
+to the server through this tunnel. If any of the previously mentioned attacks
+are successful, the application is emphatically vulnerable, regardless of what
+its FAQ may tell you.
+
+##### Key Problem Factors
+
+The core security problem faced by web applications arises in any situation
+where an application must accept and process untrusted data that may be malicious.
+
+
+##### Underdeveloped Security Awareness
+
+
+Although awareness of web application security issues has grown in recent
+years, it remains less well-developed than in longer-established areas such as
+networks and operating systems. Although most people working in IT security
+have a reasonable grasp of the essentials of securing networks and hardening
+hosts, widespread confusion and misconception still exist about many of the
+core concepts involved in web application security. A web application developer’s
+work increasingly involves weaving together tens, or even hundreds,
+of third-party packages, all designed to abstract the developer away from the
+underlying technologies. It is common to meet experienced web application
+developers who make major assumptions about the security provided by their
+programming framework and to whom an explanation of many basic types of
+fl aws comes as a revelation.
+
+##### Custom Development
+
+
+Most web applications are developed in-house by an organization’s own staff
+or third-party contractors. Even where an application employs well-established
+components, these are typically customized or bolted together using new code.
+In this situation, every application is different and may contain its own unique
+defects. This stands in contrast to a typical infrastructure deployment, in which
+an organization can purchase a best-of-breed product and install it in line with
+industry-standard guidelines.
+
+##### Deceptive Simplicity
+
+A prominent trend in recent years has been the use of application frameworks
+that provide ready-made code components to handle numerous common areas
+of functionality, such as authentication, page templates, message boards, and
+integration with common back-end infrastructure components. Examples of these
+frameworks include Liferay and Appfuse. These products make it quick and
+easy to create working applications without requiring a technical understanding
+of how the applications work or the potential risks they may contain. This also
+means many companies use the same frameworks. Thus, when a vulnerability
+is discovered, it affects many unrelated applications.
+
+##### Rapidly Evolving Threat Profile 
+
+Particularly on the client side, it is common for
+the accepted defenses against a particular attack to be undermined by research
+that demonstrates a new attack technique. A development team that begins a
+project with a complete knowledge of current threats may have lost this status
+by the time the application is completed and deployed.
+
+##### Resource and Time Constraints
+
+In the balancing of competing priorities, the need to produce a stable and
+functional application by a deadline normally overrides less tangible security
+considerations. A typical small organization may be willing to pay for only a
+few man-days of consulting time to evaluate a new application. A quick penetration
+test will often fi nd the low-hanging fruit, but it may miss more subtle
+vulnerabilities that require time and patience to identify.
+
+##### Overextended Technologies 
+As the expectations placed on web application functionality have
+rapidly evolved, the technologies used to implement this functionality have
+lagged behind the curve, with old technologies stretched and adapted to meet
+new requirements. Unsurprisingly, this has led to security vulnerabilities as
+unforeseen side effects emerge.
+
+##### Increasing Demands on Functionality
+ 
+
+
+
+
 
 
 
