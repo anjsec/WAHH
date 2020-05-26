@@ -127,3 +127,6 @@ Different approaches are often preferable for different situations
 and different types of input, and a combination of approaches may sometimes
 be desirable.
 
+###### reject known bad
+
+
