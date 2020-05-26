@@ -99,5 +99,33 @@ Because of the complex nature of typical access control requirements, this
 mechanism is a frequent source of security vulnerabilities that enable an attacker to gain unauthorized access to data and functionality.
 
 #### Handling User Input
+Input-based vulnerabilities can arise anywhere within an application’s functionality,
+and in relation to practically every type of technology in common use.
+“Input validation” is often cited as the necessary defense against these attacks.
+However, no single protective mechanism can be employed everywhere, and
+defending against malicious input is often not as straightforward as it sounds.
 
+#### Varieties of Input
+
+value to some of its user base.
+In addition to the various kinds of input that users enter using the browser
+interface, a typical application receives numerous items of data that began their
+life on the server and that are sent to the client so that the client can transmit
+them back to the server on subsequent requests. This includes items such as
+cookies and hidden form fi elds, which are not seen by ordinary users of the
+application but which an attacker can of course view and modify. In these cases,
+applications can often perform very specifi c validation of the data received. For
+example, a parameter might be required to have one of a specifi c set of known
+values, such as a cookie indicating the user’s preferred language, or to be in a
+specifi c format, such as a customer ID number. Furthermore, when an application
+detects that server-generated data has been modifi ed in a way that is not
+possible for an ordinary user with a standard browser, this often indicates
+that the user is attempting to probe the application for vulnerabilities. In these
+cases, the application should reject the request and log the incident for potential
+investigation
+
+##### Approaches to Input Handling
+Different approaches are often preferable for different situations
+and different types of input, and a combination of approaches may sometimes
+be desirable.
 
