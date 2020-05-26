@@ -36,10 +36,8 @@ A defect in
 any single component may enable an attacker to gain unrestricted access to the
 application’s functionality and data.
 
-##### Authentication
-Authenticating a user involves establishing
-that the user is in fact who he claims to be. Without this facility, the application
-would need to treat all users as anonymous — the lowest possible level of trust.
+#### Authentication
+Authenticating a user involves establishing that the user is in fact who he claims to be. Without this facility, the application would need to treat all users as anonymous — the lowest possible level of trust.
 The majority of today’s web applications employ the conventional authentication
 model, in which the user submits a username and password, which
 the application checks for validity.
@@ -49,7 +47,7 @@ tokens. In addition to the core login process, authentication mechanisms often
 employ a range of other supporting functionality, such as self-registration,
 account recovery, and a password change facility.
 
-##### Session Management
+#### Session Management
 
 The next logical task in the process of handling user access is to manage the
 authenticated user’s session. After successfully logging in to the application, the
