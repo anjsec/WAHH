@@ -264,7 +264,52 @@ lagged behind the curve, with old technologies stretched and adapted to meet
 new requirements. Unsurprisingly, this has led to security vulnerabilities as
 unforeseen side effects emerge.
 
-##### Increasing Demands on Functionality
+##### Increasing Demands on FunctionalityModern sites may include password
+recovery, username recovery, password hints, and an option to remember the
+username and password on future visits. Such a site would undoubtedly be
+promoted as having numerous security features, yet each one is really a selfservice
+feature adding to the site’s attack surface.
+
+##### The New Security Perimeter
+Web applications have changed all this. For an application to be accessible
+by its users, the perimeter fi rewall must allow inbound connections to the
+server over HTTP or HTTPS. And for the application to function, the server
+must be allowed to connect to supporting back-end systems, such as databases,
+mainframes, and fi nancial and logistical systems. These systems often lie at
+the core of the organization’s operations and reside behind several layers of
+network-level defenses.
+
+A second way in which web applications have moved the security perimeter
+arises from the threats that users themselves face when they access a vulnerable
+application. A malicious attacker can leverage a benign but vulnerable web
+application to attack any user who visits it. If that user is located on an internal
+corporate network, the attacker may harness the user’s browser to launch an
+attack against the local network from the user’s trusted position. Without any
+cooperation from the user, the attacker may be able to carry out any action that
+the user could perform if she were herself malicious. With the proliferation of
+browser extension technologies and plug-ins, the extent of the client-side attack
+surface has increased considerably.
+
+
+##### The Future of Web Application Security
+
+Various recent trends in technology have somewhat altered the landscape of
+web applications. Popular consciousness about these trends exists by means of
+various rather misleading buzzwords, the most prominent of which are these:
+
+* Web 2.0 — This term refers to the greater use of functionality that enables
+user-generated content and information sharing, and also the adoption
+of various technologies that broadly support this functionality, including
+asynchronous HTTP requests and cross-domain integration.
+
+* Cloud computing — This term refers to greater use of external service
+providers for various parts of the technology stack, including application
+software, application platforms, web server software, databases, and
+hardware. It also refers to increased usage of virtualization technologies
+within hosting environments.
+
+
+
  
 
 
