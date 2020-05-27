@@ -128,5 +128,17 @@ and different types of input, and a combination of approaches may sometimes
 be desirable.
 
 ###### reject known bad
+“Reject Known Bad”
+This approach typically employs a blacklist containing a set of literal strings or
+patterns that are known to be used in attacks. The validation mechanism blocks
+any data that matches the blacklist and allows everything else.
+In general, this is regarded as the least effective approach to validating user
+input, for two main reasons. First, a typical vulnerability in a web application
+can be exploited using a wide variety of input, which may be encoded or
+represented in various ways. Except in the simplest of cases, it is likely that a
+blacklist will omit some patterns of input that can be used to attack the application.
+Second, techniques for exploitation are constantly evolving. Novel methods
+for exploiting existing categories of vulnerabilities are unlikely to be blocked
+by current blacklists.
 
 
