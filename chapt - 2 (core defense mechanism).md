@@ -191,6 +191,40 @@ assurance about the data that actually reaches the server.
   The point at which user data is fi rst received by the server-side application represents a huge trust
 boundary. At this point the application needs to take measures to defend itself
 against malicious input.
+the role of input validation is to clean potentially malicious data on
+arrival and then pass the clean data to the trusted application. From this point
+onward, the data may be trusted and processed without any further checks or
+concern about possible attacks.
+   A more effective model uses the concept of boundary validation. Here, each
+individual component or functional unit of the server-side application treats
+its inputs as coming from a potentially malicious source. Data validation is
+performed at each of these trust boundaries, in addition to the external frontier
+between the client and server. This model provides a solution to the problems
+just described. Each component can defend itself against the specifi c types of
+crafted input to which it may be vulnerable. As data passes through different
+components, validation checks can be performed against whatever value the data
+has as a result of previous transformations. And because the various validation
+checks are implemented at different stages of processing, they are unlikely to
+come into confl ict with one another.
 
+##### Multistep Validation and Canonicalization
+##### Canonicalization
+is the process of converting or decoding data into a common character set. If
+any canonicalization is carried out after input fi lters have been applied, an
+attacker may be able to use a suitable encoding scheme to bypass the validation
+mechanism.
 
+A common problem encountered by input-handling mechanisms arises when
+user-supplied input is manipulated across several steps as part of the validation
+logic. If this process is not handled carefully, an attacker may be able to
+construct crafted input that succeeds in smuggling malicious data through the
+validation mechanism. One version of this problem occurs when an application
+attempts to sanitize user input by removing or encoding certain characters or
+expressions.
 
+A related problem arises in relation to data canonicalization. When input
+is sent from the user’s browser, it may be encoded in various ways. These
+encoding schemes exist so that unusual characters and binary data may be
+transmitted safely over HTTP .
+
+### Handling Attackers
